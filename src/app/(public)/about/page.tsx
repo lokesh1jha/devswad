@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -5,19 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#F5F5DC] text-[#4A4A4A] font-sans">
-      <header className="bg-[#2E8B57] p-4 text-white">
-        <nav className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">DevSwaD</h1>
-          <div className="space-x-4">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/products" className="hover:underline">Products</Link>
-            <Link href="/about" className="hover:underline">About</Link>
-            <Link href="/contact" className="hover:underline">Contact</Link>
-          </div>
-        </nav>
-      </header>
 
-      <main className="container mx-auto p-8">
+      <div className="container mx-auto p-8">
         <h2 className="text-3xl font-bold mb-6">About DevSwaD</h2>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -72,23 +63,7 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
-      </main>
-
-      <footer className="bg-[#2E8B57] text-white py-8 mt-12">
-        <div className="container mx-auto flex justify-between items-center">
-          <div>
-            <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-[#F5F5DC]">Facebook</a>
-              <a href="#" className="hover:text-[#F5F5DC]">Instagram</a>
-              <a href="#" className="hover:text-[#F5F5DC]">Twitter</a>
-            </div>
-          </div>
-          <div>
-            <p>&copy; 2024 DevSwaD. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      </div>
     </div>
   )
 }

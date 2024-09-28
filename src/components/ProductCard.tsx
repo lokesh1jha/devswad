@@ -16,9 +16,14 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="p-4">
         <h3 className="font-semibold mb-2">{product.name}</h3>
         <p className="text-[#2E8B57] font-bold mb-2">{product.price}</p>
+        <div className='flex justify-between'>
+
         <Button asChild className="w-full bg-[#2E8B57] hover:bg-[#228B22]">
           <Link href={`/products/${product.id}`}>View Details</Link>
         </Button>
+
+        <Button className='w-full bg-[#f8da5b] hover:bg-[#ffc93c] ml-2'>Add to Cart</Button>
+        </div>
       </div>
     </div>
   )
