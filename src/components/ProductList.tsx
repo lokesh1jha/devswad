@@ -7,7 +7,7 @@ export default function ProductList({ category, featured }: { category?: string,
 
   return (
     <div className="grid md:grid-cols-3 gap-8">
-      {products.map((product: any) => (
+      {products.map((product: Product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

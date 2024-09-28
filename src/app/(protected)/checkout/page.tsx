@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { loadStripe } from '@stripe/stripe-js'
@@ -10,7 +10,7 @@ import { useCart } from '@/app/lib/utils'
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export default function CheckoutPage() {
-  const router = useRouter()
+  // const router = useRouter()
   const { cart, total } = useCart()
   const [loading, setLoading] = useState(false)
 

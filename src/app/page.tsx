@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -24,7 +25,7 @@ export default function HomePage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Our products are made from the finest ingredients, sourced directly from Bihar's fertile lands.</p>
+            <p>Our products are made from the finest ingredients, sourced directly from Bihar&apos;s fertile lands.</p>
           </CardContent>
         </Card>
         <Card>

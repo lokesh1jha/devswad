@@ -1,8 +1,9 @@
+"use client"
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Star } from 'lucide-react'
-import { getProductById } from '@/app/lib/utils'
+import { getProductById }  from '@/app/lib/utils'
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const product = getProductById(params.id)
