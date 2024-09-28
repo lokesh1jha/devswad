@@ -2,7 +2,8 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
-import { Star, ShoppingCart, Heart } from 'lucide-react';
+import { Star, ShoppingCart } from 'lucide-react';
+// import { Heart } from 'lucide-react';
 import { getProductById } from '@/app/lib/utils';
 import { Product } from '@/app/types';
 

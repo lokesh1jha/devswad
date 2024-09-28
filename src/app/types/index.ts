@@ -5,7 +5,7 @@ export interface Product {
     image: string
     category: string
     description: string,
-    metadata?: any
+    metadata?: object
   }
   
   export interface CartItem extends Product {
