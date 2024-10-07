@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -12,7 +13,7 @@ export default function AboutPage() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
-            <img
+            <Image
               src="/placeholder.svg?height=400&width=600&text=Our+Story"
               alt="Our Story"
               className="w-full h-auto rounded-lg shadow-lg"
