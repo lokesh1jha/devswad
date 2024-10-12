@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import { getOrders } from '@/app/lib/utils_mockdata'
+import { getOrders } from '@/lib/utils_mockdata'
 
 export default function OrdersPage() {
   const orders = getOrders()

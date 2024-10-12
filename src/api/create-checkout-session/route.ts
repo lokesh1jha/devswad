@@ -1,5 +1,6 @@
-import { stripe } from '@/app/lib/stripe'
+
 import { CartItem } from '@/app/types'
+import { stripe } from '@/lib/stripe'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { loadStripe } from '@stripe/stripe-js'
-import { useCart } from '@/app/lib/utils_mockdata'
+import { useCart } from '@/lib/utils_mockdata'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { CartItem, Order, Product } from '../types'
+import { Product, CartItem, Order } from '@/app/types'
 
 // Mock data (replace with actual API calls in a real application)
 const products: Product[] = [
