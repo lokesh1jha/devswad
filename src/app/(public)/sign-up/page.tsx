@@ -13,60 +13,62 @@ export default function SignUp({ searchParams }: { searchParams: Message }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // Function to handle form submission and validate passwords
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     if (password !== confirmPassword) {
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault();
       setErrorMessage("Passwords do not match.");
     }
   };
 
   return (
-    <form className="flex-1 flex flex-col min-w-64" onSubmit={handleSubmit}>
-      <h1 className="text-2xl font-medium">Sign up</h1>
-      <p className="text-sm text-foreground">
-        Already have an account?{" "}
-        <Link className="text-foreground font-medium underline" href="/sign-in">
-          Sign In
-        </Link>
-      </p>
-      <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
-        <Label htmlFor="email">Email</Label>
-        <Input name="email" placeholder="you@example.com" required />
-        
-        <div className="flex justify-between items-center">
-          <Label htmlFor="password">Password</Label>
+    <div className="flex justify-center items-center min-h-screen px-4">
+      <form className="w-full max-w-md bg-white p-8 rounded-lg shadow-md" onSubmit={handleSubmit}>
+        <h1 className="text-2xl font-medium mb-4">Sign up</h1>
+        <p className="text-sm text-foreground mb-6">
+          Already have an account?{" "}
+          <Link className="text-foreground font-medium underline" href="/sign-in">
+            Sign In
+          </Link>
+        </p>
+        <div className="flex flex-col gap-4">
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input name="email" placeholder="you@example.com" required className="mt-1" />
+          </div>
+          <div>
+            <Label htmlFor="password">Password</Label>
+            <Input
+              type="password"
+              name="password"
+              placeholder="Your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="mt-1"
+            />
+          </div>
+          <div>
+            <Label htmlFor="confirm-password">Confirm Password</Label>
+            <Input
+              type="password"
+              name="confirm-password"
+              placeholder="Confirm your password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="mt-1"
+            />
+          </div>
+
+          {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
+
+          <SubmitButton pendingText="Signing Up..." formAction={signInAction}>
+            Sign up
+          </SubmitButton>
+          
+          <FormMessage message={searchParams} />
         </div>
-        <Input
-          type="password"
-          name="password"
-          placeholder="Your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        <div className="flex justify-between items-center">
-          <Label htmlFor="confirm-password">Confirm Password</Label>
-        </div>
-        <Input
-          type="password"
-          name="confirm-password"
-          placeholder="Confirm your password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-
-        {/* Display error message if passwords don't match */}
-        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-
-        <SubmitButton pendingText="Signing In..." formAction={signInAction}>
-          Sign up
-        </SubmitButton>
-        
-        <FormMessage message={searchParams} />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
