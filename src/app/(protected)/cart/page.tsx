@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import { useCart } from '@/app/lib/utils'
+import { useCart } from '@/app/lib/utils_mockdata'
 import CartItem from '@/components/CartItem'
 
 export default function CartPage() {
