@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { Star, ShoppingCart } from 'lucide-react';
 // import { Heart } from 'lucide-react';
-import { getProductById } from '@/app/lib/utils';
+import { getProductById } from '@/lib/utils_mockdata';
 import { Product } from '@/app/types';
 
 export default function ProductPage({ params }: { params: { id: string } }) {

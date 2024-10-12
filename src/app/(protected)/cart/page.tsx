@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import { useCart } from '@/app/lib/utils'
 import CartItem from '@/components/CartItem'
+import { useCart } from '@/lib/utils_mockdata'
 
 export default function CartPage() {
   const { cart, total } = useCart()
@@ -25,7 +25,7 @@ export default function CartPage() {
         <p>Your cart is empty. <Link href="/products" className="text-[#2E8B57] hover:underline">Continue shopping</Link></p>
       ) : (
         <>
-          {cart.map((item) => (
+          {cart.map((item: typeof cart[0]) => (
             <CartItem key={item.id} item={item} />
           ))}
           <div className="mt-8">

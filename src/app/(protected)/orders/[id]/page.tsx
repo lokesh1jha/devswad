@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getOrderById } from '@/app/lib/utils';
+import { getOrderById } from '@/lib/utils_mockdata';
 
 export interface CartItem {
   id: string;

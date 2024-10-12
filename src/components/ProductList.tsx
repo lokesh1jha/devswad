@@ -1,4 +1,4 @@
-import { getProducts } from '@/app/lib/utils'
+import { getProducts } from '@/lib/utils_mockdata'
 import ProductCard from './ProductCard'
 import { Product } from '@/app/types'
 

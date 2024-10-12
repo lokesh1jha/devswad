@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Minus, Plus, Trash2 } from 'lucide-react'
-import { useCart } from '@/app/lib/utils'
+import { useCart } from '@/lib/utils_mockdata'
 
 type CartItemType = {
   id: string
