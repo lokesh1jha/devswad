@@ -28,29 +28,27 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-20 items-center">
-              <nav className="w-full flex justify-center border-b border-b-gray-200 h-16">
-                <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                  <div className="flex gap-5 items-center font-semibold">
-                    <a href="/" className="text-[#4A4A4A]">DevSwaD</a>
-                    <div className="hidden md:ml-6 md:flex md:space-x-8">
-                      <NavLink href="/products">Our Products</NavLink>
-                      <NavLink href="/about">About Us</NavLink>
-                      <NavLink href="/contact">Contact Us</NavLink>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
-                    <MobileNavbar />
+          <main className="min-h-screen flex flex-col">
+            <nav className="w-full flex justify-center border-b border-b-gray-200 h-16">
+              <div className="w-full flex justify-between items-center p-3 px-4 sm:px-6 lg:px-8 text-sm">
+                <div className="flex gap-5 items-center font-semibold">
+                  <a href="/" className="text-[#4A4A4A]">DevSwaD</a>
+                  <div className="hidden md:ml-6 md:flex md:space-x-8">
+                    <NavLink href="/products">Our Products</NavLink>
+                    <NavLink href="/about">About Us</NavLink>
+                    <NavLink href="/contact">Contact Us</NavLink>
                   </div>
                 </div>
-              </nav>
-              <div className="flex flex-col gap-20 max-w-5xl p-5 w-full">
-                {children}
+                <div className="flex items-center gap-4">
+                  {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                  <MobileNavbar />
+                </div>
               </div>
-              <Footer />
+            </nav>
+            <div className="flex-1 w-full">
+              {children}
             </div>
+            <Footer />
           </main>
         </ThemeProvider>
       </body>
