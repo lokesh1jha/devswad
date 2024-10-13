@@ -28,6 +28,7 @@ export default function ForgotPassword() {
         setMessage('An error occurred. Please try again.');
       }
     } catch (error) {
+      console.log("error", error);
       setMessage('An unexpected error occurred. Please try again later.');
     } finally {
       setIsLoading(false);

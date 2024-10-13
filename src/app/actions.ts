@@ -141,7 +141,7 @@ export async function sendPasswordResetEmail(email: string) {
     // 2. Generating a password reset token
     // 3. Saving the token in the database with an expiration time
     // 4. Sending an email with a link containing the reset token
-
+    console.log("email", email);
     // For now, we'll just simulate a successful email send
     await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
 
