@@ -37,6 +37,7 @@ export const signUpAction = async (formData: FormData) => {
   }
 };
 
+
 export const signInAction = async (formData: FormData) => {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
@@ -52,7 +53,7 @@ export const signInAction = async (formData: FormData) => {
     return encodedRedirect("error", "/sign-in", error.message);
   }
 
-  return redirect("/protected/dashboard/jobseeker");
+  return redirect("/products");
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {
@@ -66,7 +67,7 @@ export const forgotPasswordAction = async (formData: FormData) => {
   }
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/callback?redirect_to=/protected/reset-password`,
+    redirectTo: `${origin}/auth/callback?redirect_to=/reset-password`,
   });
 
   if (error) {
@@ -98,7 +99,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (!password || !confirmPassword) {
     encodedRedirect(
       "error",
-      "/protected/reset-password",
+      "/reset-password",
       "Password and confirm password are required",
     );
   }
@@ -106,7 +107,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (password !== confirmPassword) {
     encodedRedirect(
       "error",
-      "/protected/reset-password",
+      "/reset-password",
       "Passwords do not match",
     );
   }
@@ -118,12 +119,12 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (error) {
     encodedRedirect(
       "error",
-      "/protected/reset-password",
+      "/reset-password",
       "Password update failed",
     );
   }
 
-  encodedRedirect("success", "/protected/reset-password", "Password updated");
+  encodedRedirect("success", "/reset-password", "Password updated");
 };
 
 export const signOutAction = async () => {
@@ -131,3 +132,22 @@ export const signOutAction = async () => {
   await supabase.auth.signOut();
   return redirect("/sign-in");
 };
+
+export async function sendPasswordResetEmail(email: string) {
+  try {
+    // TODO: Implement your password reset logic here
+    // This might include:
+    // 1. Checking if the email exists in your database
+    // 2. Generating a password reset token
+    // 3. Saving the token in the database with an expiration time
+    // 4. Sending an email with a link containing the reset token
+
+    // For now, we'll just simulate a successful email send
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
+
+    return { success: true };
+  } catch (error) {
+    console.error('Error sending password reset email:', error);
+    return { success: false, error: 'Failed to send password reset email' };
+  }
+}
