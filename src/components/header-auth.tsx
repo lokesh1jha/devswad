@@ -4,6 +4,7 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { createClient } from "../../utils/supabase/server";
 import { hasEnvVars } from "../../utils/supabase/check-env-vars";
+import User from "./User";
 
 export default async function AuthButton() {
   const {
@@ -48,7 +49,7 @@ export default async function AuthButton() {
   }
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
+      <User />
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
           Sign out
